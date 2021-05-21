@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SampleDaggerRx</string>
+    <string name="feature_list">feature_list</string>
+    <string name="label_dashboard">Dashboard</string>
+    <string name="label_section">Section</string>
+    <string name="label_title">Title :</string>
+    <string name="label_description">Description :</string>
+    <string name="failed_loading_msg">Something went wrong</string>
+</resources>

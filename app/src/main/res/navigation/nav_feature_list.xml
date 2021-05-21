@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_feature_list"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.android.sample.viaplay.ui.DashboardFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_dashboardFragment_to_sectionFragment"
+            app:destination="@id/sectionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sectionFragment"
+        android:name="com.android.sample.viaplay.ui.SectionFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_section">
+        <argument
+            android:name="link"
+            app:argType="com.android.sample.core.response.Link" />
+    </fragment>
+
+</navigation>

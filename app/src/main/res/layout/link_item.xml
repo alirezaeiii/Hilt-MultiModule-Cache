@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="link"
+            type="com.android.sample.core.response.Link" />
+
+        <variable
+            name="callback"
+            type="com.android.sample.viaplay.ui.LinkAdapter.OnClickListener" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
+        android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:clickable="true"
+        android:elevation="@dimen/spacing_mini"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> callback.onClick(link)}"
+        app:cardElevation="@dimen/spacing_mini">
+
+        <TextView
+            style="@style/Widget.Label"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dashboard_item_height"
+            android:layout_margin="@dimen/spacing_small"
+            android:gravity="center"
+            android:text="@{link.title}" />
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
