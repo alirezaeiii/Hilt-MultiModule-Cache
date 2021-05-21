@@ -1,5 +1,5 @@
-# SampleDaggerRx
-Modular Android architecture which showcase Kotlin, MVVM, Dynamic feature module, Navigation, Dagger, RxJava, Retrofit, DataBinding, Espresso, Unit test and Kotlin Gradle DSL.
+# SampleHiltRx
+Modular Android architecture which showcase Kotlin, MVVM, Navigation, Hilt, RxJava, Retrofit, DataBinding, Espresso, Unit test and Kotlin Gradle DSL.
 
 ## Features
 * Modular Android App Architecture.
@@ -9,7 +9,7 @@ Modular Android architecture which showcase Kotlin, MVVM, Dynamic feature module
 
 ## Modules
 
-Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them. The project is divided into 4 Modules :
+Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them. The project is divided into 3 Modules :
 
 #### App module
 
@@ -19,22 +19,13 @@ The `:app` module is an [com.android.application](https://developer.android.com/
 
 The `:core` module is an [com.android.library](https://developer.android.com/studio/projects/android-library) for serving network requests. Providing the data source for the many features that require it.
 
-#### Feature module
-
-The `:feature_list` module is an [com.android.dynamic-feature](https://developer.android.com/studio/projects/dynamic-delivery) is essentially a gradle module which can be downloaded independently from the base application module. It can hold code and resources and include dependencies, just like any other gradle module.
 
 #### Common module
 
 The `:common` module is an [com.android.library](https://developer.android.com/studio/projects/android-library) only contains code and resources which are shared between feature modules. Reusing this way resources, layouts, views, and components in the different features modules, without the need to duplicate code.
 
-### Addenda
-
-*  `:app`  depends on `:core` and indirectly depends on `:feature_list` by dynamic-features. It also depends on `:common` and `:feature_list` for instrumentation test using _androidTestImplementation_.
-* `:features_list` modules depend on `:common`, `:core` and `:app`.
-* `:core` and `:common` don’t have any dependency.
-
 ## Testing
-Local unit testing is done for ViewModel layer in `:feature_list` module.
+Local unit testing is done for ViewModel layer in `:app` module.
 
 ## Libraries
 * [Android Jetpack](https://developer.android.com/jetpack)
@@ -43,8 +34,7 @@ Local unit testing is done for ViewModel layer in `:feature_list` module.
    * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) is lifecycle-aware, meaning it respects the lifecycle of other app components updating app component observers that are in an active lifecycle state.
    * [Room](https://developer.android.com/topic/libraries/architecture/room) is a library for data storage persistence which provides an abstraction layer over SQLite.
    * [Navigation](https://developer.android.com/guide/navigation/) Android Jetpack's Navigation component helps you implement effective navigation.
-* [Dynamic feature module](https://developer.android.com/guide/app-bundle/play-feature-delivery) allows you to separate certain features and resources from the base module of your app.
-* [Dagger](https://developer.android.com/training/dependency-injection/dagger-multi-module) is a fully static, compile-time dependency injection framework for Java, Kotlin, and Android.
+   * [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) is a dependency injection library for Android that reduces the boilerplate of doing manual dependency injection in your project.
 * [RxJava](https://github.com/ReactiveX/RxJava) is a library for composing asynchronous code using observable sequences.
 * [RxAndroid](https://github.com/ReactiveX/RxAndroid) is a module that adds the minimum classes to RxJava to make writing reactive components in Android.
 * [Retrofit](https://square.github.io/retrofit/) is a Type-safe HTTP client for Android, Java and Kotlin by Square.
