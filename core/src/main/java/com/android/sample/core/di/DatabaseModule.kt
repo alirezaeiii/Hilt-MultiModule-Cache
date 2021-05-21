@@ -18,7 +18,7 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideMarvelDatabase(context: Context, moshi: Moshi): ViaplayDatabase {
+    fun provideViaplayDatabase(context: Context, moshi: Moshi): ViaplayDatabase {
         DbLinkConverter.initialize(moshi)
         return Room.databaseBuilder(
             context,
