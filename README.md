@@ -13,7 +13,7 @@ Modules are collection of source files and build settings that allow you to divi
 
 #### App module
 
-The `:app` module is an [com.android.application](https://developer.android.com/studio/build/), which is needed to create the app bundle. It is also responsible for initiating the [dependency graph](https://github.com/google/dagger).
+The `:app` module is an [com.android.application](https://developer.android.com/studio/build/), which is needed to create the app bundle.
 
 #### Core module
 
