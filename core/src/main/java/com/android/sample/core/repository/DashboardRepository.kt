@@ -1,8 +1,8 @@
 package com.android.sample.core.repository
 
 import com.android.sample.common.base.BaseRepository
-import com.android.sample.core.database.asDomainModel
 import com.android.sample.core.database.dashboard.DashboardDao
+import com.android.sample.core.database.dashboard.asDomainModel
 import com.android.sample.core.network.ViaplayService
 import com.android.sample.core.response.Dashboard
 import com.android.sample.core.response.asDatabaseModel
