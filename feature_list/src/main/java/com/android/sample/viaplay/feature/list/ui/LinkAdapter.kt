@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.ui
+package com.android.sample.viaplay.feature.list.ui
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.sample.common.base.BaseAdapter
 import com.android.sample.common.extension.layoutInflater
 import com.android.sample.core.response.Link
-import com.android.sample.viaplay.databinding.LinkItemBinding
+import com.android.sample.viaplay.feature.list.databinding.LinkItemBinding
 
 class LinkAdapter(
     private val callback: OnClickListener

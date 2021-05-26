@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.ui
+package com.android.sample.viaplay.feature.list.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,9 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.android.sample.common.util.Resource
-import com.android.sample.viaplay.BR
-import com.android.sample.viaplay.databinding.FragmentSectionBinding
-import com.android.sample.viaplay.viewmodel.SectionViewModel
+import com.android.sample.viaplay.feature.list.BR
+import com.android.sample.viaplay.feature.list.databinding.FragmentSectionBinding
+import com.android.sample.viaplay.feature.list.viewmodel.SectionViewModel
+import com.android.sample.viaplay.ui.SectionFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -34,7 +35,8 @@ class SectionFragment : Fragment() {
     ): View {
 
         val binding = FragmentSectionBinding.inflate(inflater, container, false).apply {
-            setVariable(BR.vm, viewModel)
+            //setVariable(BR.vm, viewModel)
+            vm = viewModel
             // Set the lifecycleOwner so DataBinding can observe LiveData
             lifecycleOwner = viewLifecycleOwner
         }

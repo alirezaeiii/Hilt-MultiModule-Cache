@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.ui
+package com.android.sample.viaplay.feature.list.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.sample.common.util.Resource
-import com.android.sample.viaplay.BR
-import com.android.sample.viaplay.databinding.FragmentMainBinding
-import com.android.sample.viaplay.viewmodel.DashboardViewModel
+import com.android.sample.viaplay.feature.list.databinding.FragmentMainBinding
+import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import com.android.sample.viaplay.feature.list.BR
+import com.android.sample.viaplay.ui.DashboardFragmentDirections
 
 @AndroidEntryPoint
 class DashboardFragment : Fragment() {
@@ -25,7 +26,8 @@ class DashboardFragment : Fragment() {
     ): View {
 
         val binding = FragmentMainBinding.inflate(inflater, container, false).apply {
-            setVariable(BR.vm, viewModel)
+            //setVariable(BR.vm, viewModel)
+            vm = viewModel
             // Set the lifecycleOwner so DataBinding can observe LiveData
             lifecycleOwner = viewLifecycleOwner
         }

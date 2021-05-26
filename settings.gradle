@@ -2,3 +2,4 @@ rootProject.name = "SampleHiltRx"
 include ':app'
 include ':common'
 include ':core'
+include ':feature_list'

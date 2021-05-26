@@ -1,4 +1,4 @@
-package com.android.sample.viaplay
+package com.android.sample.viaplay.feature.list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

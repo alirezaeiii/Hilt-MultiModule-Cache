@@ -1,6 +1,4 @@
-import dependencies.Dependencies
 import dependencies.DebugDependencies
-import dependencies.AnnotationProcessorsDependencies
 import extensions.*
 
 plugins {
@@ -9,7 +7,7 @@ plugins {
     id(BuildPlugins.KOTLIN_ANDROID_EXTENSIONS)
     id(BuildPlugins.KOTLIN_KAPT)
     id(BuildPlugins.NAVIGATION)
-    id(BuildPlugins.HILT)
+    //id(BuildPlugins.HILT)
 }
 
 android {
@@ -49,23 +47,7 @@ android {
 }
 
 dependencies {
-    implementation(project(BuildModules.CORE))
-
-    implementation(Dependencies.KOTLIN)
-    implementation(Dependencies.LIFECYCLE_EXTENSIONS)
-    implementation(Dependencies.LIFECYCLE_VIEWMODEL)
-    implementation(Dependencies.FRAGMENT_KTX)
-    implementation(Dependencies.NAVIGATION_FRAGMENT)
-    implementation(Dependencies.NAVIGATION_UI)
-    implementation(Dependencies.NAVIGATION_FEATURE)
-    implementation(Dependencies.MATERIAL)
-    implementation(Dependencies.CONSTRAIN_LAYOUT)
-    implementation(Dependencies.HILT)
-
+    implementation(project(BuildModules.FEATURE_LIST))
     debugImplementation(DebugDependencies.LEAK_CANARY)
-
-    kapt(AnnotationProcessorsDependencies.HILT)
-
-    addTestsDependencies()
     addAndroidTestsDependencies()
 }

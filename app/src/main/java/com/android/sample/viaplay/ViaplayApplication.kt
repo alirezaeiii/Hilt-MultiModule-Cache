@@ -1,3 +1,5 @@
+//@file:Suppress("unused")
+
 package com.android.sample.viaplay
 
 import android.app.Application

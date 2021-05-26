@@ -10,7 +10,7 @@
 
         <variable
             name="callback"
-            type="com.android.sample.viaplay.ui.LinkAdapter.OnClickListener" />
+            type="com.android.sample.viaplay.feature.list.ui.LinkAdapter.OnClickListener" />
 
     </data>
 

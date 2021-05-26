@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.viewmodel
+package com.android.sample.viaplay.feature.list.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

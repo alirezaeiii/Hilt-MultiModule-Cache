@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.viewmodel
+package com.android.sample.viaplay.feature.list.viewmodel
 
 import com.android.sample.common.base.BaseRepository
 import com.android.sample.common.base.BaseViewModel
