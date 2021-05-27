@@ -1,4 +1,4 @@
-# SampleHiltRx
+# Hilt-MultiModule-Sample
 Modular Android architecture which showcase Kotlin, MVVM, Navigation, Hilt, RxJava, Retrofit, DataBinding, Espresso, Unit test and Kotlin Gradle DSL.
 
 ## Features
