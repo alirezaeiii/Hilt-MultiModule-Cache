@@ -9,7 +9,7 @@ import com.android.sample.core.repository.DashboardRepository
 import com.android.sample.core.response.Dashboard
 import com.android.sample.core.response.Links
 import com.android.sample.core.response.asDatabaseModel
-import com.android.sample.viaplay.viewmodel.DashboardViewModel
+import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import io.reactivex.Observable
 import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.CoreMatchers.nullValue

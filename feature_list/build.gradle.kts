@@ -19,6 +19,7 @@ dependencies {
     implementation(Dependencies.NAVIGATION_FEATURE)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.RX_JAVA)
     kapt(AnnotationProcessorsDependencies.HILT)
 
     addTestsDependencies()

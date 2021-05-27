@@ -9,7 +9,7 @@ import com.android.sample.core.repository.SectionRepository
 import com.android.sample.core.response.Link
 import com.android.sample.core.response.Section
 import com.android.sample.core.response.asDatabaseModel
-import com.android.sample.viaplay.viewmodel.SectionViewModel
+import com.android.sample.viaplay.feature.list.viewmodel.SectionViewModel
 import io.reactivex.Observable
 import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.CoreMatchers.nullValue

@@ -9,7 +9,7 @@ Modular Android architecture which showcase Kotlin, MVVM, Navigation, Hilt, RxJa
 
 ## Modules
 
-Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them. The project is divided into 3 Modules :
+Modules are collection of source files and build settings that allow you to divide a project into discrete units of functionality. In this case apart from dividing by functionality/responsibility, existing the following dependence between them. The project is divided into 4 Modules :
 
 #### App module
 
@@ -24,8 +24,13 @@ The `:core` module is an [com.android.library](https://developer.android.com/stu
 
 The `:common` module is an [com.android.library](https://developer.android.com/studio/projects/android-library) only contains code and resources which are shared between feature modules. Reusing this way resources, layouts, views, and components in the different features modules, without the need to duplicate code.
 
+#### Feature module
+
+The `:feature_list` module is an [com.android.library](https://developer.android.com/studio/projects/android-library) which is the feature module.
+
+
 ## Testing
-Local unit testing is done for ViewModel layer in `:app` module.
+Local unit testing is done for ViewModel layer in `:feature_list` module.
 
 ## Libraries
 * [Android Jetpack](https://developer.android.com/jetpack)
