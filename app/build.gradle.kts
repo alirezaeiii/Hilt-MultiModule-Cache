@@ -50,6 +50,9 @@ android {
 
 dependencies {
     implementation(project(BuildModules.FEATURE_LIST))
+    implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.NAVIGATION_FRAGMENT)
+    implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.HILT)
     kapt(AnnotationProcessorsDependencies.HILT)
     debugImplementation(DebugDependencies.LEAK_CANARY)
