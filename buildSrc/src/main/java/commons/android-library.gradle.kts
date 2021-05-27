@@ -35,7 +35,4 @@ android {
 
 dependencies {
     implementation(Dependencies.KOTLIN)
-    api(Dependencies.HILT)
-
-    kapt(AnnotationProcessorsDependencies.HILT)
 }

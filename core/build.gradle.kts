@@ -26,6 +26,7 @@ dependencies {
     implementation(Dependencies.RX_JAVA)
     implementation(Dependencies.LOGGING)
     implementation(Dependencies.MOSHI_KTX)
-
+    implementation(Dependencies.HILT)
+    kapt(AnnotationProcessorsDependencies.HILT)
     kapt(AnnotationProcessorsDependencies.ROOM)
 }

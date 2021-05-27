@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.android.sample.viaplay.ui.DashboardFragment"
+        android:name="com.android.sample.viaplay.feature.list.ui.DashboardFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/sectionFragment"
-        android:name="com.android.sample.viaplay.ui.SectionFragment"
+        android:name="com.android.sample.viaplay.feature.list.ui.SectionFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_section">
         <argument

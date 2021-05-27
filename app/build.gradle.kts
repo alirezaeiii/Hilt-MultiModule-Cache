@@ -1,3 +1,5 @@
+import dependencies.Dependencies
+import dependencies.AnnotationProcessorsDependencies
 import dependencies.DebugDependencies
 import extensions.*
 
@@ -7,7 +9,7 @@ plugins {
     id(BuildPlugins.KOTLIN_ANDROID_EXTENSIONS)
     id(BuildPlugins.KOTLIN_KAPT)
     id(BuildPlugins.NAVIGATION)
-    //id(BuildPlugins.HILT)
+    id(BuildPlugins.HILT)
 }
 
 android {
@@ -48,6 +50,8 @@ android {
 
 dependencies {
     implementation(project(BuildModules.FEATURE_LIST))
+    implementation(Dependencies.HILT)
+    kapt(AnnotationProcessorsDependencies.HILT)
     debugImplementation(DebugDependencies.LEAK_CANARY)
     addAndroidTestsDependencies()
 }

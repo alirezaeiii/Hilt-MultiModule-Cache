@@ -1,4 +1,5 @@
 import dependencies.Dependencies
+import dependencies.AnnotationProcessorsDependencies
 import extensions.addTestsDependencies
 
 plugins {
@@ -18,6 +19,8 @@ dependencies {
     implementation(Dependencies.NAVIGATION_FEATURE)
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.CONSTRAIN_LAYOUT)
+    implementation(Dependencies.HILT)
+    kapt(AnnotationProcessorsDependencies.HILT)
 
     addTestsDependencies()
 }

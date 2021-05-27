@@ -12,7 +12,6 @@ import com.android.sample.viaplay.feature.list.databinding.FragmentMainBinding
 import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import com.android.sample.viaplay.feature.list.BR
-import com.android.sample.viaplay.ui.DashboardFragmentDirections
 
 @AndroidEntryPoint
 class DashboardFragment : Fragment() {
@@ -26,8 +25,7 @@ class DashboardFragment : Fragment() {
     ): View {
 
         val binding = FragmentMainBinding.inflate(inflater, container, false).apply {
-            //setVariable(BR.vm, viewModel)
-            vm = viewModel
+            setVariable(BR.vm, viewModel)
             // Set the lifecycleOwner so DataBinding can observe LiveData
             lifecycleOwner = viewLifecycleOwner
         }
