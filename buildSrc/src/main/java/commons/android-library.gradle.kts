@@ -1,7 +1,6 @@
 package commons
 
 import dependencies.Dependencies
-import dependencies.AnnotationProcessorsDependencies
 import extensions.implementation
 
 plugins {
@@ -35,4 +34,5 @@ android {
 
 dependencies {
     implementation(Dependencies.KOTLIN)
+    api(Dependencies.HILT)
 }

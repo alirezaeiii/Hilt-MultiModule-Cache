@@ -13,6 +13,5 @@ dependencies {
     api(Dependencies.SWIPE_REFRESH_LAYOUT)
     implementation(Dependencies.RX_JAVA)
     implementation(Dependencies.RX_ANDROID)
-    implementation(Dependencies.HILT)
     kapt(AnnotationProcessorsDependencies.HILT)
 }
