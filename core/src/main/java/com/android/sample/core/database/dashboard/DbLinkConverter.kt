@@ -7,22 +7,18 @@ import com.squareup.moshi.Types
 
 object DbLinkConverter {
 
-    private lateinit var moshi: Moshi
+    private lateinit var dbLinkJsonAdapter: JsonAdapter<List<DbLink>>
 
     fun initialize(moshi: Moshi){
-        this.moshi = moshi
-    }
-
-    @TypeConverter
-    @JvmStatic
-    fun jsonToList(value: String): List<DbLink>? = getDbLinkJsonAdapter().fromJson(value)
-
-    @TypeConverter
-    @JvmStatic
-    fun listToJson(list: List<DbLink>?): String = getDbLinkJsonAdapter().toJson(list)
-
-    private fun getDbLinkJsonAdapter(): JsonAdapter<List<DbLink>> {
         val listDbLink = Types.newParameterizedType(MutableList::class.java, DbLink::class.java)
-        return moshi.adapter(listDbLink)
+        dbLinkJsonAdapter = moshi.adapter(listDbLink)
     }
+
+    @TypeConverter
+    @JvmStatic
+    fun jsonToList(value: String): List<DbLink>? = dbLinkJsonAdapter.fromJson(value)
+
+    @TypeConverter
+    @JvmStatic
+    fun listToJson(list: List<DbLink>?): String = dbLinkJsonAdapter.toJson(list)
 }
