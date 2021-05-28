@@ -19,11 +19,12 @@ abstract class BaseRepository<T> {
             if (it) {
                 getRemoteResult(url)
             } else {
+                val resultFromLocalDataSource = getResultFromLocalDataSource(id)
                 Observable.create { subscriber ->
-                    if (getResultFromLocalDataSource(id) == null) {
+                    if (resultFromLocalDataSource == null) {
                         subscriber.onError(NoDataException())
                     } else {
-                        subscriber.onNext(getResultFromLocalDataSource(id)!!)
+                        subscriber.onNext(resultFromLocalDataSource)
                     }
                 }
             }.onErrorResumeNext(getRemoteResult(url))
