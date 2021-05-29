@@ -26,7 +26,7 @@ The `:common` module is an [com.android.library](https://developer.android.com/s
 
 #### Feature module
 
-The `:feature_list` module is an [com.android.library](https://developer.android.com/studio/projects/android-library) which is the feature module.
+The `:feature_list` module is an [com.android.library](https://developer.android.com/studio/projects/android-library) which is a module containing a specific feature, isolated from the rest in accordance with business logic.
 
 
 ## Testing
