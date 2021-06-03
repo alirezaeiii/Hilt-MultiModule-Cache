@@ -1,5 +1,3 @@
-//@file:Suppress("unused")
-
 package com.android.sample.viaplay
 
 import android.app.Application
@@ -8,7 +6,6 @@ import timber.log.Timber
 
 @HiltAndroidApp
 class ViaplayApplication : Application() {
-
 
     override fun onCreate() {
         super.onCreate()
