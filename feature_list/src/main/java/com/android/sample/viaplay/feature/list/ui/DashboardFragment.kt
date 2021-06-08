@@ -4,19 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.Resource
+import com.android.sample.viaplay.feature.list.BR
 import com.android.sample.viaplay.feature.list.databinding.FragmentMainBinding
 import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import com.android.sample.viaplay.feature.list.BR
 
 @AndroidEntryPoint
-class DashboardFragment : Fragment() {
+class DashboardFragment : BaseFragment<FragmentMainBinding>() {
 
-    private val viewModel by viewModels<DashboardViewModel>()
+    override val viewModel by viewModels<DashboardViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,11 +24,8 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentMainBinding.inflate(inflater, container, false).apply {
-            setVariable(BR.vm, viewModel)
-            // Set the lifecycleOwner so DataBinding can observe LiveData
-            lifecycleOwner = viewLifecycleOwner
-        }
+        val binding = FragmentMainBinding.inflate(inflater, container, false)
+        applyDataBinding(binding, BR.vm)
 
         val viewModelAdapter =
             LinkAdapter(LinkAdapter.OnClickListener { link ->
