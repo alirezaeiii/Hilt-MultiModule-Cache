@@ -11,6 +11,7 @@ import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.Resource
 import com.android.sample.viaplay.feature.list.BR
 import com.android.sample.viaplay.feature.list.databinding.FragmentSectionBinding
+import com.android.sample.viaplay.feature.list.databinding.FragmentSectionBinding.*
 import com.android.sample.viaplay.feature.list.viewmodel.SectionViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -33,7 +34,7 @@ class SectionFragment : BaseFragment<FragmentSectionBinding>() {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentSectionBinding.inflate(inflater, container, false)
+        val binding = inflate(inflater, container, false)
         applyDataBinding(binding, BR.vm)
 
         with(binding) {

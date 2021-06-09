@@ -10,6 +10,7 @@ import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.Resource
 import com.android.sample.viaplay.feature.list.BR
 import com.android.sample.viaplay.feature.list.databinding.FragmentMainBinding
+import com.android.sample.viaplay.feature.list.databinding.FragmentMainBinding.*
 import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +25,7 @@ class DashboardFragment : BaseFragment<FragmentMainBinding>() {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentMainBinding.inflate(inflater, container, false)
+        val binding = inflate(inflater, container, false)
         applyDataBinding(binding, BR.vm)
 
         val viewModelAdapter =
