@@ -27,10 +27,6 @@ open class BaseViewModel<T>(
     val liveData: LiveData<Resource<T>>
         get() = _liveData
 
-    init {
-        loadItems(false)
-    }
-
     fun loadItems(isRefreshing: Boolean) {
         if (isRefreshing) {
             repository.refresh()
