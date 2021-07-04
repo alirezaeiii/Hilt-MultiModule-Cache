@@ -21,13 +21,13 @@ abstract class BaseFragment<T: ViewDataBinding>(
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         binding.apply {
             setVariable(vmVariableId, viewModel)
             // Set the lifecycleOwner so DataBinding can observe LiveData
             lifecycleOwner = viewLifecycleOwner
         }
-        return binding.root
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
 }
