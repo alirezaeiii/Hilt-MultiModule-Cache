@@ -9,12 +9,15 @@ import androidx.navigation.fragment.findNavController
 import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.Resource
 import com.android.sample.viaplay.feature.list.BR
+import com.android.sample.viaplay.feature.list.R
 import com.android.sample.viaplay.feature.list.databinding.FragmentMainBinding
 import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DashboardFragment : BaseFragment<FragmentMainBinding>() {
+class DashboardFragment : BaseFragment<FragmentMainBinding>(
+    R.layout.fragment_main, BR.vm
+) {
 
     override val viewModel by viewModels<DashboardViewModel>()
 
@@ -24,9 +27,7 @@ class DashboardFragment : BaseFragment<FragmentMainBinding>() {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentMainBinding.inflate(inflater, container, false).apply {
-            applyDataBinding(this, BR.vm)
-        }
+        super.onCreateView(inflater, container, savedInstanceState)
 
         val viewModelAdapter =
             LinkAdapter(LinkAdapter.OnClickListener { link ->

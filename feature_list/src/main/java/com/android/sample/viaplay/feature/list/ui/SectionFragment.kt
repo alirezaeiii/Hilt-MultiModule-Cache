@@ -10,13 +10,16 @@ import androidx.navigation.fragment.navArgs
 import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.Resource
 import com.android.sample.viaplay.feature.list.BR
+import com.android.sample.viaplay.feature.list.R
 import com.android.sample.viaplay.feature.list.databinding.FragmentSectionBinding
 import com.android.sample.viaplay.feature.list.viewmodel.SectionViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SectionFragment : BaseFragment<FragmentSectionBinding>() {
+class SectionFragment : BaseFragment<FragmentSectionBinding>(
+    R.layout.fragment_section, BR.vm
+) {
 
     private val args: SectionFragmentArgs by navArgs()
 
@@ -33,9 +36,7 @@ class SectionFragment : BaseFragment<FragmentSectionBinding>() {
         savedInstanceState: Bundle?
     ): View {
 
-        val binding = FragmentSectionBinding.inflate(inflater, container, false).apply {
-            applyDataBinding(this, BR.vm)
-        }
+        super.onCreateView(inflater, container, savedInstanceState)
 
         with(binding) {
 
