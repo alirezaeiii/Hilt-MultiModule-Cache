@@ -10,12 +10,12 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 
-abstract class BaseFragment<T: ViewDataBinding>(
+abstract class BaseFragment<VM: ViewModel, T: ViewDataBinding>(
     @LayoutRes private val layoutId: Int,
     private val vmVariableId: Int
 ): Fragment() {
 
-    protected abstract val viewModel: ViewModel
+    protected abstract val viewModel: VM
 
     protected lateinit var binding: T
 

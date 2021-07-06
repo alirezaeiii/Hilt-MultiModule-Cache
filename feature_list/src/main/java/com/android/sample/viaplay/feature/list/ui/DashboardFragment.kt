@@ -15,7 +15,7 @@ import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DashboardFragment : BaseFragment<FragmentMainBinding>(
+class DashboardFragment : BaseFragment<DashboardViewModel, FragmentMainBinding>(
     R.layout.fragment_main, BR.vm
 ) {
 
