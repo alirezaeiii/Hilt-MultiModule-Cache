@@ -18,8 +18,10 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class SectionFragment : BaseFragment<SectionViewModel, FragmentSectionBinding>(
-    R.layout.fragment_section, BR.vm
+    R.layout.fragment_section
 ) {
+
+    override val vmVariableId = BR.vm
 
     private val args: SectionFragmentArgs by navArgs()
 
