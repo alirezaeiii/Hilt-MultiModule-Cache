@@ -18,17 +18,24 @@ abstract class BaseFragment<VM: ViewModel, T: ViewDataBinding>(
 
     protected abstract val vmVariableId: Int
 
-    protected lateinit var binding: T
+    private var _binding: T? = null
+
+    protected val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
         binding.apply {
             setVariable(vmVariableId, viewModel)
             // Set the lifecycleOwner so DataBinding can observe LiveData
             lifecycleOwner = viewLifecycleOwner
         }
         return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
