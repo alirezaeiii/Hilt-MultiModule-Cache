@@ -28,6 +28,10 @@ open class BaseViewModel<T>(
         get() = _liveData
 
     fun loadItems(isRefreshing: Boolean) {
+        loadItems(isRefreshing, linkUrl, linkId)
+    }
+
+    protected fun loadItems(isRefreshing: Boolean, linkUrl: String?, linkId: String?) {
         if (isRefreshing) {
             repository.refresh()
         }
