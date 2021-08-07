@@ -27,11 +27,11 @@ open class BaseViewModel<T>(
     val liveData: LiveData<Resource<T>>
         get() = _liveData
 
-    fun loadItems(isRefreshing: Boolean) {
-        loadItems(isRefreshing, linkUrl, linkId)
+    init {
+        loadItems(false)
     }
 
-    protected fun loadItems(isRefreshing: Boolean, linkUrl: String?, linkId: String?) {
+    fun loadItems(isRefreshing: Boolean) {
         if (isRefreshing) {
             repository.refresh()
         }

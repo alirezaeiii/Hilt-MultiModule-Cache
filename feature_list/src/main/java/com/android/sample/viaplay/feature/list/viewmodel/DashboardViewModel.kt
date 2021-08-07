@@ -11,9 +11,4 @@ import javax.inject.Inject
 class DashboardViewModel @Inject constructor(
     repository: BaseRepository<Dashboard>,
     schedulerProvider: BaseSchedulerProvider,
-) : BaseViewModel<Dashboard>(repository, schedulerProvider, null, null) {
-
-    init {
-        loadItems(false)
-    }
-}
+) : BaseViewModel<Dashboard>(repository, schedulerProvider, null, null)

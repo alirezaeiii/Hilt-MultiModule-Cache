@@ -18,10 +18,6 @@ class SectionViewModel @AssistedInject constructor(
     @Assisted link: Link
 ) : BaseViewModel<Section>(repository, schedulerProvider, link.href.cleanHref(), link.id) {
 
-    init {
-        loadItems(false)
-    }
-
     @AssistedFactory
     interface SectionViewModelFactory {
         fun create(link: Link): SectionViewModel

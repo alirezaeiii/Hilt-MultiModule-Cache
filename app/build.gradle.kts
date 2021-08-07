@@ -54,7 +54,10 @@ dependencies {
     implementation(Dependencies.NAVIGATION_FRAGMENT)
     implementation(Dependencies.NAVIGATION_UI)
     implementation(Dependencies.HILT)
+    implementation(Dependencies.ROOM)
+    implementation(Dependencies.ROOM_RUNTIME)
     kapt(AnnotationProcessorsDependencies.HILT)
+    kapt(AnnotationProcessorsDependencies.ROOM)
     debugImplementation(DebugDependencies.LEAK_CANARY)
     addAndroidTestsDependencies()
 }
