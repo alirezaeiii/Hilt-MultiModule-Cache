@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.feature.list
+package com.android.sample.app.feature.list
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.android.sample.viaplay.feature.list", appContext.packageName)
+        assertEquals("com.android.sample.app.feature.list", appContext.packageName)
     }
 }

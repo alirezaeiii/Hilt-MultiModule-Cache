@@ -1,15 +1,15 @@
-package com.android.sample.viaplay.feature.list
+package com.android.sample.app
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.android.sample.common.util.Resource
 import com.android.sample.common.util.schedulers.TestSchedulerProvider
 import com.android.sample.core.database.dashboard.DashboardDao
-import com.android.sample.core.network.ViaplayService
+import com.android.sample.core.network.ApiService
 import com.android.sample.core.repository.DashboardRepository
 import com.android.sample.core.response.Dashboard
 import com.android.sample.core.response.Links
 import com.android.sample.core.response.asDatabaseModel
-import com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel
+import com.android.sample.app.feature.list.viewmodel.DashboardViewModel
 import io.reactivex.Observable
 import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.CoreMatchers.nullValue
@@ -34,7 +34,7 @@ class DashboardViewModelTest {
     val rule: TestRule = InstantTaskExecutorRule()
 
     @Mock
-    private lateinit var service: ViaplayService
+    private lateinit var service: ApiService
 
     @Mock
     private lateinit var dao: DashboardDao

@@ -2,7 +2,7 @@
  * Configuration of android build
  */
 object BuildAndroidConfig {
-    const val APPLICATION_ID = "com.android.sample.viaplay"
+    const val APPLICATION_ID = "com.android.sample.app"
 
     const val COMPILE_SDK_VERSION = 30
     const val MIN_SDK_VERSION = 21

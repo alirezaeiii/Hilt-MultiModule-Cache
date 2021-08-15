@@ -6,7 +6,7 @@ import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Url
 
-interface ViaplayService {
+interface ApiService {
 
     @GET("androiddash-se")
     fun getDashboard(): Observable<Dashboard>

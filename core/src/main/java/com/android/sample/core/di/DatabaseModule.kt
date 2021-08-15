@@ -3,7 +3,7 @@ package com.android.sample.core.di
 import android.content.Context
 import androidx.room.Room
 import com.android.sample.core.BuildConfig
-import com.android.sample.core.database.ViaplayDatabase
+import com.android.sample.core.database.AppDatabase
 import com.android.sample.core.database.dashboard.DbLinkConverter
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -18,20 +18,20 @@ object DatabaseModule {
 
     @Singleton
     @Provides
-    fun provideViaplayDatabase(context: Context, moshi: Moshi): ViaplayDatabase {
+    fun provideAppDatabase(context: Context, moshi: Moshi): AppDatabase {
         DbLinkConverter.initialize(moshi)
         return Room.databaseBuilder(
             context,
-            ViaplayDatabase::class.java,
-            BuildConfig.VIAPLAY_DATABASE_NAME
+            AppDatabase::class.java,
+            BuildConfig.DATABASE_NAME
         ).build()
     }
 
     @Singleton
     @Provides
-    fun provideDashboardDao(db: ViaplayDatabase) = db.dashboardDao()
+    fun provideDashboardDao(db: AppDatabase) = db.dashboardDao()
 
     @Singleton
     @Provides
-    fun provideSectionDao(db: ViaplayDatabase) = db.sectionDao()
+    fun provideSectionDao(db: AppDatabase) = db.sectionDao()
 }

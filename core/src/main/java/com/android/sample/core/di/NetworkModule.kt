@@ -1,7 +1,7 @@
 package com.android.sample.core.di
 
 import com.android.sample.core.BuildConfig
-import com.android.sample.core.network.ViaplayService
+import com.android.sample.core.network.ApiService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -52,7 +52,7 @@ object NetworkModule {
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit =
         Retrofit.Builder()
-            .baseUrl(BuildConfig.VIAPLAY_API_BASE_URL)
+            .baseUrl(BuildConfig.API_BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -60,6 +60,6 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideViaplayService(retrofit: Retrofit): ViaplayService =
-        retrofit.create(ViaplayService::class.java)
+    fun provideApiService(retrofit: Retrofit): ApiService =
+        retrofit.create(ApiService::class.java)
 }

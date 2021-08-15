@@ -1,15 +1,15 @@
-package com.android.sample.viaplay
+package com.android.sample.app
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.android.sample.common.util.Resource
 import com.android.sample.common.util.schedulers.TestSchedulerProvider
-import com.android.sample.core.database.dashboard.DashboardDao
-import com.android.sample.core.network.ViaplayService
-import com.android.sample.core.repository.DashboardRepository
-import com.android.sample.core.response.Dashboard
-import com.android.sample.core.response.Links
+import com.android.sample.core.database.section.SectionDao
+import com.android.sample.core.network.ApiService
+import com.android.sample.core.repository.SectionRepository
+import com.android.sample.core.response.Link
+import com.android.sample.core.response.Section
 import com.android.sample.core.response.asDatabaseModel
-import com.android.sample.viaplay.viewmodel.DashboardViewModel
+import com.android.sample.app.viewmodel.SectionViewModel
 import io.reactivex.Observable
 import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.CoreMatchers.nullValue
@@ -24,39 +24,41 @@ import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
+import org.mockito.Mockito.anyString
 import org.mockito.junit.MockitoJUnitRunner
 import java.util.concurrent.TimeUnit
 
 @RunWith(MockitoJUnitRunner::class)
-class DashboardViewModelTest {
+class SectionViewModelTest {
 
     @get:Rule
     val rule: TestRule = InstantTaskExecutorRule()
 
     @Mock
-    private lateinit var service: ViaplayService
+    private lateinit var service: ApiService
 
     @Mock
-    private lateinit var dao: DashboardDao
+    private lateinit var dao: SectionDao
 
     private lateinit var schedulerProvider: TestSchedulerProvider
-    private lateinit var dashboardRepository: DashboardRepository
-    private lateinit var viewModel: DashboardViewModel
+    private lateinit var sectionRepository: SectionRepository
+    private lateinit var viewModel: SectionViewModel
 
     @Before
     fun setUp() {
         // Make the sure that all schedulers are immediate.
         schedulerProvider = TestSchedulerProvider()
+        sectionRepository = SectionRepository(service, dao)
 
-        dashboardRepository = DashboardRepository(service, dao)
-        viewModel = DashboardViewModel(dashboardRepository, schedulerProvider)
+        val link = Link("id", "title", "href")
+        viewModel = SectionViewModel(sectionRepository, schedulerProvider, link)
     }
 
     @Test
     fun givenDaoReturnCache_whenGetResult_thenReturnSuccessFromCache() {
-        val dashboard = Dashboard(Links((emptyList())))
-        `when`(dao.getDashboard()).thenReturn(dashboard.asDatabaseModel())
-        `when`(service.getDashboard()).thenReturn(Observable.error(Exception("")))
+        val section = Section("sectionId", "title", "description")
+        `when`(dao.getSection(anyString())).thenReturn(section.asDatabaseModel())
+        `when`(service.getSection(anyString())).thenReturn(Observable.error(Exception("")))
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(Resource.Loading))
@@ -68,7 +70,9 @@ class DashboardViewModelTest {
             assertThat(it, `is`(notNullValue()))
             if (it is Resource.Success) {
                 it.data?.let { data ->
-                    assertTrue(data.links.sections.isEmpty())
+                    assertTrue(data.sectionId == "sectionId")
+                    assertTrue(data.title == "title")
+                    assertTrue(data.description == "description")
                 }
             } else {
                 fail("Wrong type $it")
@@ -78,9 +82,9 @@ class DashboardViewModelTest {
 
     @Test
     fun givenDaoReturnNull_whenGetResult_thenReturnErrorWithNullMessage() {
-        val dashboard = Dashboard(Links((emptyList())))
-        `when`(dao.getDashboard()).thenReturn(null)
-        `when`(service.getDashboard()).thenReturn(Observable.just(dashboard))
+        val section = Section("sectionId", "title", "description")
+        `when`(dao.getSection(anyString())).thenReturn(null)
+        `when`(service.getSection(anyString())).thenReturn(Observable.just(section))
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(Resource.Loading))
@@ -100,7 +104,7 @@ class DashboardViewModelTest {
 
     @Test
     fun givenServerReturnError_whenGetResult_thenReturnErrorWithMessage() {
-        `when`(service.getDashboard()).thenReturn(Observable.error(Exception("error")))
+        `when`(service.getSection(anyString())).thenReturn(Observable.error(Exception("error")))
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(Resource.Loading))

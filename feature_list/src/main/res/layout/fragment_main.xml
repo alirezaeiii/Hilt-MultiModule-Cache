@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.android.sample.viaplay.feature.list.viewmodel.DashboardViewModel" />
+            type="com.android.sample.app.feature.list.viewmodel.DashboardViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

@@ -7,10 +7,10 @@ plugins {
 
 android {
     defaultConfig {
-        buildConfigField("String", "VIAPLAY_API_BASE_URL", "\"https://content.viaplay.se/\"")
-        buildConfigField("String", "VIAPLAY_DATABASE_NAME", "\"viaplay-db\"")
-        buildConfigField("int", "VIAPLAY_DATABASE_VERSION", "1")
-        buildConfigField("boolean", "VIAPLAY_DATABASE_EXPORT_SCHEMA", "false")
+        buildConfigField("String", "API_BASE_URL", "\"https://content.viaplay.se/\"")
+        buildConfigField("String", "DATABASE_NAME", "\"app-db\"")
+        buildConfigField("int", "DATABASE_VERSION", "1")
+        buildConfigField("boolean", "DATABASE_EXPORT_SCHEMA", "false")
     }
 }
 

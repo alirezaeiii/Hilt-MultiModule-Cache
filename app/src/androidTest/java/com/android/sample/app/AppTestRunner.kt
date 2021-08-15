@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.android.sample.viaplay
+package com.android.sample.app
 
 import androidx.test.runner.AndroidJUnitRunner
 import com.squareup.rx2.idler.Rx2Idler

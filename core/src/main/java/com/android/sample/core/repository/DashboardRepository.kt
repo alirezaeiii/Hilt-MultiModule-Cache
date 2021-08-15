@@ -3,7 +3,7 @@ package com.android.sample.core.repository
 import com.android.sample.common.base.BaseRepository
 import com.android.sample.core.database.dashboard.DashboardDao
 import com.android.sample.core.database.dashboard.asDomainModel
-import com.android.sample.core.network.ViaplayService
+import com.android.sample.core.network.ApiService
 import com.android.sample.core.response.Dashboard
 import com.android.sample.core.response.asDatabaseModel
 import io.reactivex.Observable
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 @Singleton
 class DashboardRepository @Inject constructor(
-    private val remoteDataSource: ViaplayService,
+    private val remoteDataSource: ApiService,
     private val dao: DashboardDao
 ) : BaseRepository<Dashboard>() {
 

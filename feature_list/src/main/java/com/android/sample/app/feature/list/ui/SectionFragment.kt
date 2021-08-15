@@ -1,4 +1,4 @@
-package com.android.sample.viaplay.feature.list.ui
+package com.android.sample.app.feature.list.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,10 +9,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.Resource
-import com.android.sample.viaplay.feature.list.BR
-import com.android.sample.viaplay.feature.list.R
-import com.android.sample.viaplay.feature.list.databinding.FragmentSectionBinding
-import com.android.sample.viaplay.feature.list.viewmodel.SectionViewModel
+import com.android.sample.app.feature.list.BR
+import com.android.sample.app.feature.list.R
+import com.android.sample.app.feature.list.databinding.FragmentSectionBinding
+import com.android.sample.app.feature.list.viewmodel.SectionViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

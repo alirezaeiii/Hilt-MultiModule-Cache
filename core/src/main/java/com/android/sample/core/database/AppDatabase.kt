@@ -12,11 +12,11 @@ import com.android.sample.core.database.section.SectionDao
 
 @Database(
     entities = [DbDashboard::class, DbSection::class],
-    version = BuildConfig.VIAPLAY_DATABASE_VERSION,
-    exportSchema = BuildConfig.VIAPLAY_DATABASE_EXPORT_SCHEMA
+    version = BuildConfig.DATABASE_VERSION,
+    exportSchema = BuildConfig.DATABASE_EXPORT_SCHEMA
 )
 @TypeConverters(DbLinkConverter::class)
-abstract class ViaplayDatabase : RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
 
     abstract fun dashboardDao(): DashboardDao
 

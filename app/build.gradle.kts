@@ -22,7 +22,7 @@ android {
         versionCode = BuildAndroidConfig.VERSION_CODE
         versionName = BuildAndroidConfig.VERSION_NAME
 
-        testInstrumentationRunner = "com.android.sample.viaplay.AppTestRunner"
+        testInstrumentationRunner = "com.android.sample.app.AppTestRunner"
     }
 
     buildTypes {
@@ -59,5 +59,6 @@ dependencies {
     kapt(AnnotationProcessorsDependencies.HILT)
     kapt(AnnotationProcessorsDependencies.ROOM)
     debugImplementation(DebugDependencies.LEAK_CANARY)
+    addTestsDependencies()
     addAndroidTestsDependencies()
 }

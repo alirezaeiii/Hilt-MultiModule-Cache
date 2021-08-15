@@ -1,15 +1,15 @@
-package com.android.sample.viaplay.feature.list
+package com.android.sample.app.feature.list
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.android.sample.common.util.Resource
 import com.android.sample.common.util.schedulers.TestSchedulerProvider
 import com.android.sample.core.database.section.SectionDao
-import com.android.sample.core.network.ViaplayService
+import com.android.sample.core.network.ApiService
 import com.android.sample.core.repository.SectionRepository
 import com.android.sample.core.response.Link
 import com.android.sample.core.response.Section
 import com.android.sample.core.response.asDatabaseModel
-import com.android.sample.viaplay.feature.list.viewmodel.SectionViewModel
+import com.android.sample.app.feature.list.viewmodel.SectionViewModel
 import io.reactivex.Observable
 import org.hamcrest.CoreMatchers.notNullValue
 import org.hamcrest.CoreMatchers.nullValue
@@ -35,7 +35,7 @@ class SectionViewModelTest {
     val rule: TestRule = InstantTaskExecutorRule()
 
     @Mock
-    private lateinit var service: ViaplayService
+    private lateinit var service: ApiService
 
     @Mock
     private lateinit var dao: SectionDao

@@ -1,11 +1,11 @@
-package com.android.sample.viaplay
+package com.android.sample.app
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class ViaplayApplication : Application() {
+class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
