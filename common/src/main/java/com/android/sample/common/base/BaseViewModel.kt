@@ -17,8 +17,8 @@ import timber.log.Timber
 open class BaseViewModel<T>(
     private val repository: BaseRepository<T>,
     private val schedulerProvider: BaseSchedulerProvider,
-    private val linkUrl: String?,
-    private val linkId: String?
+    private val linkUrl: String? = null,
+    private val linkId: String? = null
 ) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
