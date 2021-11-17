@@ -15,7 +15,6 @@ object BuildDependenciesVersions {
     const val CONSTRAIN_LAYOUT = "2.0.4"
     const val ROOM = "2.2.5"
     const val DAGGER = "2.36"
-    const val HILT_ANDROID = "1.0.0"
     const val RX_JAVA = "2.1.9"
     const val RX_ANDROID = "2.1.1"
     const val TIMBER = "4.7.1"
