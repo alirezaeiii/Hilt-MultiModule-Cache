@@ -25,7 +25,7 @@ abstract class BaseFragment<VM: ViewModel, T: ViewDataBinding>(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         _binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        _binding?.apply {
+        binding.apply {
             setVariable(vmVariableId, viewModel)
             // Set the lifecycleOwner so DataBinding can observe LiveData
             lifecycleOwner = viewLifecycleOwner
