@@ -2,9 +2,9 @@
  * Configuration version of all build dependencies
  */
 object BuildDependenciesVersions {
-    const val GRADLE_ANDROID = "4.2.1"
-    const val KOTLIN = "1.4.31"
-    const val NAVIGATION = "2.3.4"
+    const val GRADLE_ANDROID = "7.0.3"
+    const val KOTLIN = "1.5.31"
+    const val NAVIGATION = "2.3.5"
     const val APPCOMPAT = "1.2.0"
     const val MATERIAL = "1.2.1"
     const val RECYCLE_VIEW = "1.1.0"
@@ -14,7 +14,7 @@ object BuildDependenciesVersions {
     const val FRAGMENT_KTX = "1.3.1"
     const val CONSTRAIN_LAYOUT = "2.0.4"
     const val ROOM = "2.2.5"
-    const val DAGGER = "2.36"
+    const val DAGGER = "2.40"
     const val RX_JAVA = "2.1.9"
     const val RX_ANDROID = "2.1.1"
     const val TIMBER = "4.7.1"

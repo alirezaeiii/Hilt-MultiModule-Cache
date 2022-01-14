@@ -6,17 +6,17 @@ import extensions.implementation
 plugins {
     id("com.android.library")
     id("kotlin-android")
-    id("kotlin-android-extensions")
+    id("kotlin-parcelize")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
 
 android {
-    compileSdkVersion(BuildAndroidConfig.COMPILE_SDK_VERSION)
+    compileSdk = BuildAndroidConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        minSdkVersion(BuildAndroidConfig.MIN_SDK_VERSION)
-        targetSdkVersion(BuildAndroidConfig.TARGET_SDK_VERSION)
+        minSdk = BuildAndroidConfig.MIN_SDK_VERSION
+        targetSdk = BuildAndroidConfig.TARGET_SDK_VERSION
     }
 
     compileOptions {
