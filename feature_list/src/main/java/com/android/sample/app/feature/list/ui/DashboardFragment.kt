@@ -16,11 +16,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class DashboardFragment : BaseFragment<DashboardViewModel, FragmentMainBinding>(
-    R.layout.fragment_main
+    R.layout.fragment_main, BR.vm
 ) {
-
-    override val vmVariableId = BR.vm
-
     override val viewModel by viewModels<DashboardViewModel>()
 
     override fun onCreateView(
