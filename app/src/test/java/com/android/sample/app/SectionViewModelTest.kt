@@ -1,7 +1,7 @@
 package com.android.sample.app
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.android.sample.common.util.Resource
+import com.android.sample.common.util.ViewState
 import com.android.sample.common.util.schedulers.TestSchedulerProvider
 import com.android.sample.core.database.section.SectionDao
 import com.android.sample.core.network.ApiService
@@ -61,14 +61,14 @@ class SectionViewModelTest {
         `when`(service.getSection(anyString())).thenReturn(Observable.error(Exception("")))
 
         viewModel.liveData.value.let {
-            assertThat(it, `is`(Resource.Loading))
+            assertThat(it, `is`(ViewState.Loading))
         }
 
         schedulerProvider.testScheduler.advanceTimeBy(1, TimeUnit.MILLISECONDS)
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(notNullValue()))
-            if (it is Resource.Success) {
+            if (it is ViewState.Success) {
                 it.data?.let { data ->
                     assertTrue(data.sectionId == "sectionId")
                     assertTrue(data.title == "title")
@@ -87,14 +87,14 @@ class SectionViewModelTest {
         `when`(service.getSection(anyString())).thenReturn(Observable.just(section))
 
         viewModel.liveData.value.let {
-            assertThat(it, `is`(Resource.Loading))
+            assertThat(it, `is`(ViewState.Loading))
         }
 
         schedulerProvider.testScheduler.advanceTimeBy(1, TimeUnit.MILLISECONDS)
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(notNullValue()))
-            if (it is Resource.Error) {
+            if (it is ViewState.Error) {
                 assertThat(it.message, `is`(nullValue()))
             } else {
                 fail("Wrong type $it")
@@ -107,14 +107,14 @@ class SectionViewModelTest {
         `when`(service.getSection(anyString())).thenReturn(Observable.error(Exception("error")))
 
         viewModel.liveData.value.let {
-            assertThat(it, `is`(Resource.Loading))
+            assertThat(it, `is`(ViewState.Loading))
         }
 
         schedulerProvider.testScheduler.advanceTimeBy(1, TimeUnit.MILLISECONDS)
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(notNullValue()))
-            if (it is Resource.Error) {
+            if (it is ViewState.Error) {
                 assertThat(it.message, `is`(notNullValue()))
                 assertThat(it.message, `is`("error"))
             } else {

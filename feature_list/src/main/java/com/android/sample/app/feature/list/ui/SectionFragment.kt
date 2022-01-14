@@ -8,7 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.android.sample.common.base.BaseFragment
-import com.android.sample.common.util.Resource
+import com.android.sample.common.util.ViewState
 import com.android.sample.app.feature.list.BR
 import com.android.sample.app.feature.list.R
 import com.android.sample.app.feature.list.databinding.FragmentSectionBinding
@@ -40,7 +40,7 @@ class SectionFragment : BaseFragment<SectionViewModel, FragmentSectionBinding>(
         with(binding) {
 
             viewModel.liveData.observe(viewLifecycleOwner, { resource ->
-                if (resource is Resource.Success) {
+                if (resource is ViewState.Success) {
                     textTitle.text = resource.data?.title
                     textDescription.text = resource.data?.description
                 }

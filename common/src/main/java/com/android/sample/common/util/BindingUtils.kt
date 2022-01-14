@@ -7,8 +7,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.android.sample.common.base.BaseAdapter
 
 @BindingAdapter("showData")
-fun <T, R: RecyclerView.ViewHolder> RecyclerView.showData(resource: Resource<T>?) {
-    if (resource is Resource.Error) {
+fun <T, R: RecyclerView.ViewHolder> RecyclerView.showData(viewState: ViewState<T>?) {
+    if (viewState is ViewState.Error) {
         this.scrollToPosition(0)
         @Suppress("UNCHECKED_CAST")
         (this.adapter as BaseAdapter<T, R>).submitList(null)
@@ -16,16 +16,16 @@ fun <T, R: RecyclerView.ViewHolder> RecyclerView.showData(resource: Resource<T>?
 }
 
 @BindingAdapter("refreshing")
-fun <T> SwipeRefreshLayout.setSwipeRefreshLayout(resource: Resource<T>?) {
-    isRefreshing = resource is Resource.Loading
+fun <T> SwipeRefreshLayout.setSwipeRefreshLayout(viewState: ViewState<T>?) {
+    isRefreshing = viewState is ViewState.Loading
 }
 
 @BindingAdapter("showData")
-fun <T> View.showData(resource: Resource<T>?) {
-    visibility = if (resource is Resource.Success) View.VISIBLE else View.GONE
+fun <T> View.showData(viewState: ViewState<T>?) {
+    visibility = if (viewState is ViewState.Success) View.VISIBLE else View.GONE
 }
 
 @BindingAdapter("showError")
-fun <T> View.showError(resource: Resource<T>?) {
-    visibility = if (resource is Resource.Error) View.VISIBLE else View.GONE
+fun <T> View.showError(viewState: ViewState<T>?) {
+    visibility = if (viewState is ViewState.Error) View.VISIBLE else View.GONE
 }

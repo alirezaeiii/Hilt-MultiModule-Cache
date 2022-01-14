@@ -3,7 +3,7 @@ package com.android.sample.common.base
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.android.sample.common.util.Resource
+import com.android.sample.common.util.ViewState
 import com.android.sample.common.util.schedulers.BaseSchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
@@ -23,8 +23,8 @@ open class BaseViewModel<T>(
 
     private val compositeDisposable = CompositeDisposable()
 
-    private val _liveData = MutableLiveData<Resource<T>>()
-    val liveData: LiveData<Resource<T>>
+    private val _liveData = MutableLiveData<ViewState<T>>()
+    val liveData: LiveData<ViewState<T>>
         get() = _liveData
 
     init {
@@ -35,13 +35,13 @@ open class BaseViewModel<T>(
         if (isRefreshing) {
             repository.refresh()
         }
-        _liveData.value = Resource.Loading
+        _liveData.value = ViewState.Loading
         repository.getResult(linkUrl, linkId).subscribeOn(schedulerProvider.io())
             .observeOn(schedulerProvider.ui())
             .subscribe({
-                _liveData.postValue(Resource.Success(it))
+                _liveData.postValue(ViewState.Success(it))
             }) {
-                _liveData.postValue(Resource.Error(it.localizedMessage))
+                _liveData.postValue(ViewState.Error(it.localizedMessage))
                 Timber.e(it)
             }.also { compositeDisposable.add(it) }
     }
