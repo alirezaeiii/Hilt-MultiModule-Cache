@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/Theme.SampleDaggerRx">
+        android:theme="@style/Theme.SampleHiltRx">
         <activity android:name="com.android.sample.app.MainActivity"
             android:exported="true">
             <intent-filter>
