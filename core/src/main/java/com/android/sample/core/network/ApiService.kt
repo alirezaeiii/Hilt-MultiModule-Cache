@@ -8,7 +8,7 @@ import retrofit2.http.Url
 
 interface ApiService {
 
-    @GET("androiddash-se")
+    @GET("androidexo-se")
     fun getDashboard(): Observable<Dashboard>
 
     @GET
