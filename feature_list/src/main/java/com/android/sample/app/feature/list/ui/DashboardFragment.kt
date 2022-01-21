@@ -10,13 +10,13 @@ import com.android.sample.common.base.BaseFragment
 import com.android.sample.common.util.ViewState
 import com.android.sample.app.feature.list.BR
 import com.android.sample.app.feature.list.R
-import com.android.sample.app.feature.list.databinding.FragmentMainBinding
+import com.android.sample.app.feature.list.databinding.FragmentDashboardBinding
 import com.android.sample.app.feature.list.viewmodel.DashboardViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DashboardFragment : BaseFragment<DashboardViewModel, FragmentMainBinding>(
-    R.layout.fragment_main, BR.vm
+class DashboardFragment : BaseFragment<DashboardViewModel, FragmentDashboardBinding>(
+    R.layout.fragment_dashboard, BR.vm
 ) {
     override val viewModel by viewModels<DashboardViewModel>()
 

@@ -9,7 +9,7 @@
         android:id="@+id/dashboardFragment"
         android:name="com.android.sample.app.feature.list.ui.DashboardFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_dashboard">
         <action
             android:id="@+id/action_dashboardFragment_to_sectionFragment"
             app:destination="@id/sectionFragment" />
