@@ -1,11 +1,10 @@
 package com.android.sample.app
 
-import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class MyApplication : Application() {
+class Application : android.app.Application() {
 
     override fun onCreate() {
         super.onCreate()
