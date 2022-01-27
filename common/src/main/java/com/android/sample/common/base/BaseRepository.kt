@@ -25,8 +25,7 @@ abstract class BaseRepository<T> {
                         subscriber.onNext(resultFromLocalDataSource)
                     }
                 }
-            }.onErrorResumeNext(getResultFromRemoteDataSource(url)
-                .doOnComplete { cacheIsDirty = false })
+            }.onErrorResumeNext(getResultFromRemoteDataSource(url))
         }
 
     fun refresh() {
