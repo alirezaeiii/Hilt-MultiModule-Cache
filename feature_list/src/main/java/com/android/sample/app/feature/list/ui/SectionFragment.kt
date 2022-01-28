@@ -39,12 +39,12 @@ class SectionFragment : BaseFragment<SectionViewModel, FragmentSectionBinding>(
 
         with(binding) {
 
-            viewModel.liveData.observe(viewLifecycleOwner, { resource ->
+            viewModel.liveData.observe(viewLifecycleOwner) { resource ->
                 if (resource is ViewState.Success) {
                     textTitle.text = resource.data?.title
                     textDescription.text = resource.data?.description
                 }
-            })
+            }
 
             toolbar.apply {
                 setNavigationOnClickListener { findNavController().navigateUp() }
