@@ -16,7 +16,11 @@ fun <T> View.showData(viewState: ViewState<T>?) {
     setVisibility(textDescription, labelDescription, viewState)
 }
 
-fun <T> setVisibility(textView: TextView, labelText: TextView, viewState: ViewState<T>?) {
+private fun <T> setVisibility(
+    textView: TextView,
+    labelText: TextView,
+    viewState: ViewState<T>?
+) {
     val visibility = if (viewState is ViewState.Success ||
         (viewState is ViewState.Loading && textView.text.isNotEmpty())
     ) View.VISIBLE else View.GONE
