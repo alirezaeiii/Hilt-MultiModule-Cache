@@ -21,9 +21,8 @@ private fun <T> setVisibility(
     labelText: TextView,
     viewState: ViewState<T>?
 ) {
-    val visibility = if (viewState is ViewState.Success ||
-        (viewState is ViewState.Loading && textView.text.isNotEmpty())
-    ) View.VISIBLE else View.GONE
-    textView.visibility = visibility
+    val visibility = if (viewState is ViewState.Error ||
+        textView.text.isEmpty()
+    ) View.GONE else View.VISIBLE
     labelText.visibility = visibility
 }
