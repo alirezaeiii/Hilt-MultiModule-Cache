@@ -82,9 +82,7 @@ class SectionViewModelTest {
 
     @Test
     fun givenDaoReturnNull_whenGetResult_thenReturnErrorWithNullMessage() {
-        val section = Section("sectionId", "title", "description")
         `when`(dao.getSection(anyString())).thenReturn(null)
-        `when`(service.getSection(anyString())).thenReturn(Observable.just(section))
 
         viewModel.liveData.value.let {
             assertThat(it, `is`(ViewState.Loading))
