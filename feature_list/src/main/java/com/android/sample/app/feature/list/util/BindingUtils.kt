@@ -16,11 +16,12 @@ fun <T> View.showData(viewState: ViewState<T>?) {
     labelDescription.setVisibility(textDescription, viewState)
 }
 
-private fun <T> TextView.setVisibility(
+private fun <T> View.setVisibility(
     textView: TextView,
     viewState: ViewState<T>?
 ) {
     visibility = if (viewState is ViewState.Error ||
         textView.text.isEmpty()
     ) View.GONE else View.VISIBLE
+    textView.visibility = if (viewState is ViewState.Error) View.GONE else View.VISIBLE
 }
