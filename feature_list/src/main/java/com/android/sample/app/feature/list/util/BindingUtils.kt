@@ -23,7 +23,5 @@ private fun <T> View.setVisibility(
     if (viewState is ViewState.Error) {
         textView.text = null
     }
-    visibility = if (viewState is ViewState.Error ||
-        textView.text.isNullOrEmpty()
-    ) View.GONE else View.VISIBLE
+    visibility = if (textView.text.isNullOrEmpty()) View.GONE else View.VISIBLE
 }
